@@ -31,9 +31,10 @@ a {
 }
 
 a.current{
-	border-bottom-width: 1em;
+	/* border-bottom-width: 1em;
 	/* padding-bottom: .4em; */
-	border-bottom-color: green;
+	/* border-bottom-color: green; */ 
+	color: goldenrod;
 	
 }
 
