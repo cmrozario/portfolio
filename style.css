@@ -1,3 +1,7 @@
+html{
+	--color-accent: oklch(68.2% 0.133 271.99);
+	accent-color: var(--color-accent)
+}
 body {
     /* Set line height to 1.5 times the font size
        and use the OS’s UI font as the website font
@@ -22,13 +26,13 @@ nav{
 	border-bottom-color: oklch(80% 3% 200);
 	
 }
-a.current{
+#nav a.current{
 	border-bottom-width: .4em;
 	padding-bottom: .4em;
 	border-bottom-color: green; 
 	
 }
-a {
+#nav a {
 	flex: 1;
 	text-decoration: none;
 	color: inherit;
