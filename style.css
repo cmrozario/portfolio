@@ -35,3 +35,7 @@ input, textarea {
 	/* Use the same font and font metrics as the rest of the page */
 	font: inherit;
 }
+
+ul, li {
+	display: contents;
+}
