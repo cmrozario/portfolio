@@ -23,10 +23,9 @@ nav{
 	
 }
 a.current{
-	border-bottom-width: .4em;
-	/* padding-bottom: .4em; */
-	/* border-bottom-color: green; */ 
-	color: goldenrod;
+	border-bottom-width: .4em !important;
+	padding-bottom: .4em;
+	border-bottom-color: green !important; 
 	
 }
 a {
