@@ -22,10 +22,10 @@ nav{
 	border-bottom-color: oklch(80% 3% 200);
 	
 }
-nav a.current{
-	border-bottom-width: .4em !important;
+a.current{
+	border-bottom-width: .4em;
 	padding-bottom: .4em;
-	border-bottom-color: green !important; 
+	border-bottom-color: green; 
 	
 }
 a {
