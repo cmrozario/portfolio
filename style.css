@@ -33,7 +33,7 @@ a {
 a.current{
 	border-bottom-width: .4em;
 	padding-bottom: .4em;
-	border-bottom-color: oklch(50% 3% 200);
+	border-bottom-color: green;
 	
 }
 
