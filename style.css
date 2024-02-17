@@ -14,10 +14,14 @@ body {
 	 */
 	display: block;
 }
-nav {
+nav{
 	display: flex;
-	text-decoration: none;
 }
+nav a {
+	flex: 1;
+}
+
+
 
 label {
 	/* Add some space before each label that grows as the font size grows */
