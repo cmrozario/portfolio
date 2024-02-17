@@ -22,7 +22,7 @@ nav{
 	border-bottom-color: oklch(80% 3% 200);
 	
 }
-a.current{
+nav a.current{
 	border-bottom-width: .4em !important;
 	padding-bottom: .4em;
 	border-bottom-color: green !important; 
