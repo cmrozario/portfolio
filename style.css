@@ -22,7 +22,7 @@ nav{
 	border-bottom-color: oklch(80% 3% 200);
 	
 }
-a {
+nav a {
 	flex: 1;
 	text-decoration: none;
 	color: inherit;
@@ -30,7 +30,7 @@ a {
 	padding: .5em;
 }
 
-a.current{
+nav a.current{
 	border-bottom-width: .4em;
 	/* padding-bottom: .4em; */
 	/* border-bottom-color: green; */ 
