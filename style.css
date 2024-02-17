@@ -31,7 +31,7 @@ a {
 }
 
 a.current{
-	border-bottom-width: .4em;
+	border-bottom-width: 1em;
 	padding-bottom: .4em;
 	border-bottom-color: green;
 	
