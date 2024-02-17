@@ -20,6 +20,7 @@ nav{
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: oklch(80% 3% 200);
+	
 }
 a {
 	flex: 1;
@@ -27,6 +28,13 @@ a {
 	color: inherit;
 	text-align: center;
 	padding: .5em;
+}
+
+a.current{
+	border-bottom-width: .4em;
+	padding-bottom: .4em;
+	border-bottom-color: oklch(50% 3% 200);
+	
 }
 
 
