@@ -26,19 +26,26 @@ nav{
 	border-bottom-color: oklch(80% 3% 200);
 	
 }
-#nav a.current{
+ a.current{
 	border-bottom-width: .4em;
 	padding-bottom: .4em;
 	border-bottom-color: green; 
 	
 }
-#nav a {
+ a {
 	flex: 1;
 	text-decoration: none;
 	color: inherit;
 	text-align: center;
 	padding: .5em;
-}
+ }
+
+
+a:hover{
+		border-bottom-width: .4em;
+		border-bottom-color: accent-color;
+	}
+
 
 
 
