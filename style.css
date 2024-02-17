@@ -19,7 +19,7 @@ nav{
 	margin-bottom: .5em;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
-	border-bottom-color: hsl(80% 3% 200);
+	border-bottom-color: oklch(80% 3% 200);
 }
 a {
 	flex: 1;
