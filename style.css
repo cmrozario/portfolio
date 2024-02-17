@@ -4,6 +4,7 @@ body {
      */
 	max-width: 100ch;
 	margin-inline: 10% 10%;
+	padding: 1em;
     font: 100%/1.5 system-ui;
    }
 
