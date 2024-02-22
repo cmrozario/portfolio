@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 2</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Consecrata</strong> — <em>crozario</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Subtheme: Exploring speculative investment</h2>
+
+			<h3>Overall Analysis Questions</h3>
+			<ol>
+				<li><strong>What percent of homes in Boston should be available for rent? In other words, how many people need to rent homes for various reasons rather than buy?</strong> I ask this question because Boston is a city with many college students and fresh graduates who are not looking to buy a home. Are speculators who buy and rent homes providing to this demand? Are they over providing?</li>
+				<li><strong>What are the different investment methods and how do they differ based on the size of the investor?</strong> I’ve seen many videos on TikTok/Instagram of people talking about their Airbnb/home rental business and the method they describe is typically putting the smallest percentage down payment possible and using the rent money to pay the mortgage. Are these people and institutional investors competing over the same pool of homes or are the institutional investors typically going after different property types?</li>
+				<li><strong>How fast are homes typically sold after they are bought? </strong>Furthermore, how long do institutional investors hold their investments? After the reading, it’s clear that a there is a huge margin to be made by the institutional investors in flipping homes. But how many homes are bought solely as a “safe investment” and are sitting empty for years?</li>
+				<!-- <li>...</li> -->
+			</ol>
+		</section>
+
+		<section>
+			<h2>Discoveries & Insights</h2>
+
+			<figure>
+				<img src="pics/g1.png" alt="graph of the distribution of property prices"  width = 100%/>
+				<figcaption>
+				This is a plot of bucketed <em>price</em> versus the number of buildings sold. The range of prices was between 0 and 1000M. The 1000M sale was of 401 Park Dr which is a massive office complex in Fenway. 
+				In this study I am focused on residential buildings, so I filtered the <em>Proptypes</em> to only include single family homes, 2-5 family homes, apartments and condos. After doing this there were still several office buildings above 100M incorrectly classified as condos 
+				along with several luxury apartments and condos priced above 10M. These properties are not the focus of this study; I am more interested in homes that are reasonable for the average person to buy. Thus, I set a threshold of 5M. It is the 
+				homes below this threshold that are in high demand by the average family and that we want to investigate the impact of speculative buying on. 
+				I also removed about 200 homes listed as being sold for a dollar. With this filtered data, I created the following histogram of the property transaction prices. I colored the histogram to visualize who, or what type of entity bought the homes <em>(Investor Type Purchase) </em>.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g2.png" alt="Cumulative amount spent on all properties" width = 45%/>
+				<img src="pics/g2.2.png" alt="Cumulative amount spent on all properties <5M" width = 45%/>
+				<figcaption>
+				The first pie chart is on the complete dataset while the second is on the dataset with a maximum <em>price</em> cap of 5M and only residential properties (the same filter as above). 
+				These two pie charts help us understand the exact breakdown of buyers of properties. When looking at the entire dataset, Institutional buyers take up almost as much of the market share as the Non-investors. 
+				When limited to the filtered data, Non-investors are the significant contributors. Institutional investors are purchasing a few high-value, large properties, contributing to the large <em>price</em> volume in the first pie chart. 
+				The next largest investor type are the small investors. This matches my intuition of speculative buying and flipping homes. From my personal experience, flipping homes is a hands on task that small investors may be better suited for than large investors and institutions. 
+				This leads into my next investigative question. <strong>Who is buying the properties and who is selling them?</strong> What is the flow between the Investor types?
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g3.png" alt="What entities are buying and selling?"  width = 90%/>
+				<figcaption>
+				There is a large outlier in this graph: Non-investors selling Condos to eachother. This data point is so large that the gradient on the other datapoints is not noticable. To alleviate this, I added a cap on the color gradient at 2500. So while we loose the intensity of the single
+				data point, we can see the other relationships much clearer. We see that condos are the main property type, contributing the most to the total amount of transactions.
+				There are also a significant amount of transactions between the same type of entity i.e. medium investors have the highest amount of transactions with other medium investors.
+				I hypothesise that this has to do with the price range of these homes. Perhaps the size of the investors corresponds to the type of home or price of home purchaced, relagating groups of investors to the same pool of properties. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g4.png" alt="Value of homes broken down by the investor types" width = 100%/>
+				<figcaption>
+				This graph shoes that investers buy more expensive properties on average. However, there is no strong correlation between size of the investor and price range of the properties purchaced. 
+				There is a large drop off at around 4M where non-investors stop purchasing homes. 
+				I am slightly suspicious of the non-investor category and would like to further break it down. In this study I would like to focus on people trying to purchace their first or maybe second home that they are primarily going to live in and want to make sure the non-investor 
+				category reflects this.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g5.png" alt="Amoutn of properties owned by non-investors" width = 100%/>
+				<figcaption>
+					There are about 6k entities categorized as Non-investors who own more than 2 homes. People who are purchasing their third home are not the most harmed by the speculative buying problem. 
+					So I will break the Non-investors category down into two subgroups, “non-investors” and “micro-investors” (using a calculated field in Tableau). 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g6.png" alt="What entities are buying and selling (further broken down)"  width = 90%/>
+				<figcaption>
+					You can see that these “micro-investors” are pretty significant. They purchase many homes from small investors and transact heavily among themselves. 
+					The decision to split them from the non-investors (own less than two homes) is rational and I will continue using these splits throughout the rest of the exploration. 
+					After not finding evidence to back the hypothesis that the same level of investors are purchasing the same value homes, I would like to test a second hypothesis to explain the “investor x to investor x” trend noticed above. 
+					Maybe the spatial layout of the city of Boston influences who can purchase properties in which locations. <strong>Are there roadblocks for noninvestors to buy in certain neighborhoods in Boston, allowing speculative buyers to instead? </strong>
+					<strong>Are non-investors (or any other group) purchasing properties in specific locations of Boston, resulting in transactions within the same group? </strong> 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g7.png" alt="Property prices in boston" width = 100%/>
+				<figcaption>
+					You can see the major streets and neighborhoods of Boston on this map. In each of the major neighborhoods, you can see that there is a wide distribution of home values. 
+					This matches my intuition. There are no “rich neighborhoods” in Boston like you may see in other cities like NYC. Now to test the hypothesis, let’s see exactly which investors are purchasing which homes.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g8.png" alt="Property price for each investor type" width = 100%/>
+				<figcaption>
+					There are no noticable neighborhoods where one investor is the main purchaser. However, all types of investors are purchasing low-cost, affordable homes. The investors seem to be purchasing cheaper properties than you would expect.
+					The micro-investors are, on average, purchasing cheaper homes than the non-investors. This points to the speculatory buying problem. 
+					If people who already own more than two home and are buying at least their third are buying relatively inexpensive properties compared to the non-investors, 
+					perhaps they are taking supply away from people who are looking to buy their first home and unable to find an affordable option. <strong>What gives these investors an advantage to buy these homes before the first time home owners? </strong> 
+					The Homes for profit article mentioned that cash transactions played a role in this. 
+					Investors purchasing their nth home are more likely to be paying in cash which is favorable for the seller. 
+					A way to test this would be to visualize the difference in the percent of payment made with a mortage between the purchases of the investors and non-investors. 
+					One thing to note is that the metadata says the mortgage field is the percent of the payment made with a mortgage but looking at the data, it is clearly the numerical amount that is mortgaged. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g9.png" alt="How much of a mortgage people are taking out" width = 100%/>
+				<figcaption>
+					This chart does not show a significant difference in the average mortage taken out by Micro-investors and Non-investors. It shows the opposite of what I expected for the other investors. However the mortgage is given as an absolute value and should be calculated as a percentage relative to the total cost of the house. I will create a calculated field which give mortgage as a percentage of the total sale to get a clearer view of the data.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="pics/g10.png" alt="How much percent mortgage people are taking out" width = 100% />
+				<figcaption>
+				I see the expected result in the intututional to small investors now that the data is normalized. 
+				However, Micro-investors, on average, take out the highest percentage mortgage according to this chart. 
+				I don't belive this is a strong enough relationship to be able to draw a conclusion about mortgage behaviors by investor type. There could be multiple factors at play that can be further investigated. 
+				 I have seen many videos of “tiktok influencers” talking about their air-bnb side buisness. In the buisness model they describe, they find homes suitable to rent and put the the smallest possible down payment and use the rent to cover the high mortgage payment. 
+				This could be what is happening but we would need more data to prove or disprove this idea. 
+				</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>	Non-investors contribute the vast majority of transactions under 5 million dollars. Large and institutional investors spend alot of money on Boston real estate but concentrate in high end buildings and commercial spaces. Smaller and micro investors are the entities who are purchasing 
+				the properties most likely to be in demand by first time home owners and non-investors. The spatial layout of Boston has little to do with home values. All neighborhoods have a wide distribution of prices of homes leading every type of investor and non-investors to 
+				compete for the same properties. Theres evidence of speculatory buying in the small and micro-investors who are purchasing at least their third home. These purchases are not high-end properties and are affordable homes non-investors otherwise would buy. Further analysis using information
+				about homes put up for rent could clearly distinguish these buyers and speculatory. 
+				
+			</p>
+		</section>
+	</main>
+</body>
+</html>
